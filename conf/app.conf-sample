@@ -13,7 +13,7 @@ app.name = docsvision-jsonapi
 # (and detect) user modification.
 # Keep this string secret or users will be able to inject arbitrary cookie values
 # into your application
-app.secret = 1SqVFhlmPzrRstfoQbmonb7sAsdn1MWPCCKBDgJfjdumORRR7dfJtmmddDw0xtzQ
+app.secret = SomeSecretPassphraseHere
 
 
 # The IP address on which to listen.
@@ -128,10 +128,17 @@ module.testrunner = github.com/revel/modules/testrunner
 
 
 # Where to log the various Revel logs
-log.trace.output = off
+log.trace.output = stderr
 log.info.output  = stderr
 log.warn.output  = stderr
 log.error.output = stderr
+
+db_docsvision.driver	= mssql
+db_docsvision.user	= dv_dev
+db_docsvision.password	= SomePassword
+db_docsvision.host	= localhost
+db_docsvision.port	= 1433
+db_docsvision.name	= DV_dev
 
 
 
@@ -158,3 +165,11 @@ log.trace.output = off
 log.info.output  = off
 log.warn.output  = %(app.name)s.log
 log.error.output = %(app.name)s.log
+
+db_docsvision.driver	= mssql
+db_docsvision.user	= dv_prod
+db_docsvision.password	= SomePassword
+db_docsvision.host	= localhost
+db_docsvision.port	= 1433
+db_docsvision.name	= DV_prod
+
